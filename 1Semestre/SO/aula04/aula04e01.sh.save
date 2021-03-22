@@ -1,0 +1,16 @@
+#!/bin/bash 
+function imprime_msg()
+{
+	echo "A minha primeira funcao"
+	return 0 
+} 
+
+function data_pc()
+{
+	echo "Data - " $(date)
+	echo "Nome do pc - " $(hostname)
+	echo "Utilizador - " $(who)#!/bin/bash function imprime_msg(){ echo "A minha primeira funcao" return 0 } imprime_msg
+	return 0
+}
+imprime_msg
+data_pc

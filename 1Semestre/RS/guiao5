@@ -1,0 +1,11 @@
+
+Portas q permitem sair da linha chamam se designated port
+
+Exercicio 2:lado esquerdo quem manda o pacote é a root q é a designated port, e do 1 para o 2 quem manda é a root tambem, da 2 para a 3 é a designated port que neste caso é o switch 2
+
+Nao percebi bem o q é q o homem fez no 3
+Quando existia so o 3, ele assumia se como root, envia para todas as portas bpdus a dizer q a root era ele, o root path cost é 0 e o bridge Id era o 3 , dps ligou se o 2 q tem um id menor e assume se como root e envia ele as cena, root path cost = 0 e bridge id é ele, o 3 para de enviar cenas para a 2 e recebe as de la pk a info q vem da 2 é melhor, e da bridge 3 o root path cost passa a ser 19 mas continua a mandar bpdus para o 1, dps o 1 liga-se e manda bpdus para todas as suas saidas, 3 e 2 deixam de enviar para 1 pk recebem bpdus melhores , e o 1 diz q ele é q é a root, o 2 recebe o pacote melhor e corrige e fica com o root path cost 19 e o 3 so recebe as cenas da root e do router 2
+
+
+Se bpdus flags mudarem para um (pacote logo a seguir ao preto q aparece quando se muda algo) entao é a root a dizer q confirma q mudou algo naquela porta
+COm esta info os switches mudam do tempo de vida longo(300segs) para um curto para poder destruir os sers macs e voltar a reconstrui-los

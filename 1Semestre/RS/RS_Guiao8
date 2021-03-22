@@ -1,0 +1,34 @@
+neighbor - para fazer as ligacoes com os vizinhos  (TENHO AS MERDAS MAL CONFIGURADAS xD), falei so dos Routers mas algumas vezes eram switches q tinha de dizer - atento
+network é para poder dizer q tem aquela rede, para a poder propagar para as outras redes
+
+Redistribute - como a rede que ta ligada a  R3 nao ta ligado diretamente à rede 2 que recebeu o network da rede do R1, entao faz um redistribute para poder receber tambem a rede que esta liga da a R1.
+MAnda primeiro tcp pk nao tava completo a cionfig mandando resets (R1) e quando se completa manda se 3 pacotes TCP dizendo que ja ta tudo bem e comecam as trocas de pacotes BGP
+
+Primeiros pacotes trocados entre R1 e R2 , BGP open do r1 para r2 e bgp open do r2 para r1 para se poderem conhecer, pacotes bgp keep alive é para a sessao nao ir abaixo , para se manter vivos, e capturou tambem bgp update - mandods do r1 para r2 e do r2 para r1, e r2 manda duas pk  vai anunciar duas redes, pois esta ligado a duas. 
+
+Pacote update, no ultimo campo anuncia as redes q tem
+O 2 tem duas mas envia outro pacote update mais a frente
+
+pergunta 2 em cima
+perfunta 3
+
+Os unicos pacotes q circulam sao oos pacotes keepalive pk nao ha nenhuma rede nova para trocr, logo nao ha updates, so para manter a ligaçao de vizinhanca ativa e as ligoacoes tcp alives. de 60 em 60 segundos(acho xD)
+
+EXercico 4
+
+Quando se terminou a ligacao mandou um pacote withdrawn route a dizer q q foi retirada a rede e ja nao ta a cessivel., praticammente imediato
+DEpois fez se no shutdown, logo outro update, quase imediatamente, a dizer q ja tava tudo ok de novo,mandou outro update a dizer q podia voltar a meter aquela rede na routing table 
+
+Pergunta 5
+Em vez de anunciar as redes separadamente vamos agregar todas as redes do R2 num so agregado om todas as redes deste router
+
+Como so difere no ultimo bit a rede entao a mascara metida vai ser 255.255.254.0
+
+Efeito - Se formos ao R1 teremos de ver uma alteracao na routing-table, em vex de 2 B, temos um B correspondente ao agregado das redes todas ligadas a R2
+
+Exercicio 6 - Ao acabar a ligaçao da rede 31, nao vai haver nenhum update a dizer q aquela rede foi de cona, logo o R1 nunca se apercebe que aquela rede desapareceu, e se mandar algum pacote , nao vai cheagar ao destino. Sendo esta uma desvantagem. 
+
+Exercicio 7 - toda a rede 30 vai abaixo, pois o R3 nao tem ligacao, logo o R2 ja nao tem o agreagado havendo agora update ad izer q ja nao ha agreagado. 
+
+Exercicio 8
+

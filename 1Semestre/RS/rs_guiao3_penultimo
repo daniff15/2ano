@@ -1,0 +1,5 @@
+pc 1 -> switch 1 --- deu ; 1 ARP (apanha o primeiro ou caso ja tivesse o MAC do switch nao mandava nenhum)
+pc 1 -> pc 3 --- deu ; ARP request + arp reply + icmp reply + icmp request
+pc 1 -> pc 4 --- nao deu ; ARP request
+pc 2 -> pc 3 --- nao ; nada pois ele fez o ARP request mas foi na vlan 2 e so ha cabo de vlan 1
+pc 2 -> pc 4 --- nao ; nada (embora no meu pc tenha apanhado pacotes ARP)

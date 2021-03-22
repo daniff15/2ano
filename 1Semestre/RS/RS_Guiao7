@@ -1,0 +1,18 @@
+A partir do E7 acho
+Como é q as baes de dados obtem esta info toda?
+à medida que se vai comecando a configurar oos routers e networks vao logo comecando a trocar pacotes ospf fazendo flooding sucessivos para passar a informaçao
+Pk é q o identififcador da rede fica com o rede.enderço.nº?
+PK vai ficar com esses valorees, à medida da rede q se configura o router, ficando esta como designated bridge
+
+ex9
+Para se ir por onde queremos podemos trocar o custo da porta de saida do R3 ou do R2
+No caminho de regresso continua com o mesmo valor (20) logo trocamos um porta de saida para menor que 20 para ir por cima (pedido no exercicio), trocando o path cost para 9 da porta de saida do path cost do R1 o udo R2.
+Caso so quisessemos alterar uma saida podiamos ter alterado so a interface f0/1 do R2 ficando o problem alogo resolvida para ir para esse router e para voltar para la.
+Caso alterassemos aduas tinha de ser no caso da ida para o  R2, alterar  a saida f0/1 do R3 e no retorno para o PC teriamos de alterar a saida f0/0 do R1
+
+E10
+Quando se mudaram os custos entao os pacotes ospf apanharam pacotes com info de link state acknowledge, pois houveram alteraçoes
+
+E11
+O router 2 mete se como a default route, ou seja supondo que o R3 quer mandar pacotes para sitios que nao conhece, esses pacotes terao de passar pelo R2
+
