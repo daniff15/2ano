@@ -1,3 +1,5 @@
+package PDS;
+
 public enum Direction {
     UP, DOWN, LEFT, RIGHT, UPLEFT, DOWNLEFT, UPRIGHT, DOWNRIGHT;  
 

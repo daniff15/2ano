@@ -1,3 +1,5 @@
+package PDS;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -28,13 +30,13 @@ public class wordSearchSolver {
                         && checkAlphabetic(nextWord)) // Checkar se as letras misturadas satisfazem as condiçoes
                     words.add(nextWord);// adcionar as linhas q satisfazem essas conds
                 else if (!isUpper(nextWord) && nextWord.length() > 3 && !checkAlphabetic(nextWord)) { // caso nao
-                                                                                                       // cumpram,
-                                                                                                       // significa que
-                                                                                                       // chegamos as
-                                                                                                       // palavras q
-                                                                                                       // estao
-                                                                                                       // escondidas na
-                                                                                                       // sopa de letras
+                                                                                                      // cumpram,
+                                                                                                      // significa que
+                                                                                                      // chegamos as
+                                                                                                      // palavras q
+                                                                                                      // estao
+                                                                                                      // escondidas na
+                                                                                                      // sopa de letras
                     palavrasPorLinha = nextWord.split(",|\\ |\\;");
                     for (int i = 0; i < palavrasPorLinha.length; i++) {
                         palavras.add(palavrasPorLinha[i].toUpperCase()); // adicionar as palavras ao array e metê-las em
@@ -52,7 +54,10 @@ public class wordSearchSolver {
         }
 
         if (!checkPuzzle(words)) {
-            System.out.println("O puzzle não é quadrado ou não verifica o tamanho necessário (4x4 minímo)"); // Checkar se o puzzle é quadradro
+            System.out.println("O puzzle não é quadrado ou não verifica o tamanho necessário (4x4 minímo)"); // Checkar
+                                                                                                             // se o
+                                                                                                             // puzzle é
+                                                                                                             // quadradro
             System.exit(0);
         }
         sopaLetras = new char[words.get(0).length()][words.get(0).length()];// Inicializacao do bidimensional array
@@ -129,48 +134,54 @@ public class wordSearchSolver {
                         int linhaCerta = linha;
                         int colunaCerta = coluna;
                         // pesquisar cima
-                        if (linha != 0 && segundaLetra == sopaLetras[linha - 1][coluna]) {
+                        if (linha != 0 && Character.valueOf(segundaLetra)
+                                .compareTo(Character.valueOf(sopaLetras[linha - 1][coluna])) == 0) {
                             // Chamar a funcao q vai para cima so a partir do terceiro caracter
                             cima(sopaLetras, palavra, colunaCerta, linhaCerta, checkPalavras, info);
                         }
                         // pesquisar baixo
-                        if (linha != sopaLetras.length - 1 && segundaLetra == sopaLetras[linha + 1][coluna]) {
+                        if (linha != sopaLetras.length - 1 && Character.valueOf(segundaLetra)
+                                .compareTo(Character.valueOf(sopaLetras[linha + 1][coluna])) == 0) {
                             // Chamar a funcao q vai para baixo so a partir do terceiro caracter
                             baixo(sopaLetras, palavra, colunaCerta, linhaCerta, checkPalavras, info);
                         }
                         // pesquisar direita
-                        if (coluna != sopaLetras.length - 1 && segundaLetra == sopaLetras[linha][coluna + 1]) {
+                        if (coluna != sopaLetras.length - 1 && Character.valueOf(segundaLetra)
+                                .compareTo(Character.valueOf(sopaLetras[linha][coluna + 1])) == 0) {
                             // Chamar a funcao q vai para direita so a partir do terceiro caracter
                             direita(sopaLetras, palavra, colunaCerta, linhaCerta, checkPalavras, info);
                         }
                         // pesquisar esquerda
-                        if (coluna != 0 && segundaLetra == sopaLetras[linha][coluna - 1]) {
+                        if (coluna != 0 && Character.valueOf(segundaLetra)
+                                .compareTo(Character.valueOf(sopaLetras[linha][coluna - 1])) == 0) {
                             // Chamar a funcao q vai para esquerda so a partir do terceiro caracter
                             esquerda(sopaLetras, palavra, colunaCerta, linhaCerta, checkPalavras, info);
                         }
                         // pesquisar direita diagonal cima
-                        if (linha != 0 && coluna != sopaLetras.length - 1
-                                && segundaLetra == sopaLetras[linha - 1][coluna + 1]) {
+                        if (linha != 0 && coluna != sopaLetras.length - 1 && Character.valueOf(segundaLetra)
+                                .compareTo(Character.valueOf(sopaLetras[linha - 1][coluna + 1])) == 0) {
                             // Chamar a funcao q vai para diagonal direita cima so a partir do terceiro
                             // caracter
                             direitaCima(sopaLetras, palavra, colunaCerta, linhaCerta, checkPalavras, info);
                         }
                         // pesquisar esquerda diagonal cima
-                        if (linha != 0 && coluna != 0 && segundaLetra == sopaLetras[linha - 1][coluna - 1]) {
+                        if (linha != 0 && coluna != 0 && Character.valueOf(segundaLetra)
+                                .compareTo(Character.valueOf(sopaLetras[linha - 1][coluna - 1])) == 0) {
                             // Chamar a funcao q vai para diagonal esquerda cima so a partir do terceiro
                             // caracter
                             esquerdaCima(sopaLetras, palavra, colunaCerta, linhaCerta, checkPalavras, info);
                         }
                         // pesquisar direita diagonal baixo
                         if (linha != sopaLetras.length - 1 && coluna != sopaLetras.length - 1
-                                && segundaLetra == sopaLetras[linha + 1][coluna + 1]) {
+                                && Character.valueOf(segundaLetra)
+                                        .compareTo(Character.valueOf(sopaLetras[linha + 1][coluna + 1])) == 0) {
                             // Chamar a funcao q vai para diagonal direita baixo so a partir do terceiro
                             // caracter
                             direitaBaixo(sopaLetras, palavra, colunaCerta, linhaCerta, checkPalavras, info);
                         }
                         // pesquisar esquerda diagonal baixo
-                        if (linha != sopaLetras.length - 1 && coluna != 0
-                                && segundaLetra == sopaLetras[linha + 1][coluna - 1]) {
+                        if (linha != sopaLetras.length - 1 && coluna != 0 && Character.valueOf(segundaLetra)
+                                .compareTo(Character.valueOf(sopaLetras[linha + 1][coluna - 1])) == 0) {
                             // Chamar a funcao q vai para diagonal esquerda baixo so a partir do terceiro
                             // caracter
                             esquerdaBaixo(sopaLetras, palavra, colunaCerta, linhaCerta, checkPalavras, info);
@@ -185,8 +196,8 @@ public class wordSearchSolver {
             ArrayList<String> checkPalavras, List<String[]> info) {
 
         for (int i = 2; i < palavra.length(); i++) {
-            if (!(linhaCerta - 2 < 0)) {
-                if (!checkPalavras.contains(palavra) && sopaLetras[linhaCerta - 2][colunaCerta] == palavra.charAt(i)) {
+            if (!(linhaCerta - i < 0)) {
+                if (!checkPalavras.contains(palavra) && sopaLetras[linhaCerta - i][colunaCerta] == palavra.charAt(i)) {
                     checkPalavras.add(palavra);
                     int coordenada1 = linhaCerta + 1;
                     int coordenada2 = colunaCerta + 1;
@@ -206,8 +217,8 @@ public class wordSearchSolver {
             ArrayList<String> checkPalavras, List<String[]> info) {
 
         for (int i = 2; i < palavra.length(); i++) {
-            if (!(linhaCerta + 2 > sopaLetras.length))
-                if (!checkPalavras.contains(palavra) && sopaLetras[linhaCerta + 2][colunaCerta] == palavra.charAt(i)) {
+            if (!(linhaCerta + i > sopaLetras.length)) {
+                if (!checkPalavras.contains(palavra) && sopaLetras[linhaCerta + i][colunaCerta] == palavra.charAt(i)) {
                     checkPalavras.add(palavra);
                     int coordenada1 = linhaCerta + 1;
                     int coordenada2 = colunaCerta + 1;
@@ -216,10 +227,10 @@ public class wordSearchSolver {
                     String[] intel = { palavra.toLowerCase(), String.valueOf(palavra.length()),
                             String.valueOf(coordenada1), String.valueOf(coordenada2), "Down" };
                     info.add(intel);
-
-                } else {
-                    return;
                 }
+            } else {
+                return;
+            }
         }
     }
 
@@ -227,8 +238,8 @@ public class wordSearchSolver {
             ArrayList<String> checkPalavras, List<String[]> info) {
 
         for (int i = 2; i < palavra.length(); i++) {
-            if (!(colunaCerta + 2 > sopaLetras.length))
-                if (!checkPalavras.contains(palavra) && sopaLetras[linhaCerta][colunaCerta + 2] == palavra.charAt(i)) {
+            if (!(colunaCerta + i > sopaLetras.length))
+                if (!checkPalavras.contains(palavra) && sopaLetras[linhaCerta][colunaCerta + i] == palavra.charAt(i)) {
                     checkPalavras.add(palavra);
                     int coordenada1 = linhaCerta + 1;
                     int coordenada2 = colunaCerta + 1;
@@ -247,8 +258,8 @@ public class wordSearchSolver {
             ArrayList<String> checkPalavras, List<String[]> info) {
 
         for (int i = 2; i < palavra.length(); i++) {
-            if (!(colunaCerta - 2 < 0))
-                if (!checkPalavras.contains(palavra) && sopaLetras[linhaCerta][colunaCerta - 2] == palavra.charAt(i)) {
+            if (!(colunaCerta - i < 0))
+                if (!checkPalavras.contains(palavra) && sopaLetras[linhaCerta][colunaCerta - i] == palavra.charAt(i)) {
                     checkPalavras.add(palavra);
                     int coordenada1 = linhaCerta + 1;
                     int coordenada2 = colunaCerta + 1;
@@ -268,9 +279,9 @@ public class wordSearchSolver {
             ArrayList<String> checkPalavras, List<String[]> info) {
 
         for (int i = 2; i < palavra.length(); i++) {
-            if (!(linhaCerta - 2 < 0 || colunaCerta + 2 > sopaLetras.length))
+            if (!(linhaCerta - i < 0 || colunaCerta + i > sopaLetras.length))
                 if (!checkPalavras.contains(palavra)
-                        && sopaLetras[linhaCerta - 2][colunaCerta + 2] == palavra.charAt(i)) {
+                        && sopaLetras[linhaCerta - i][colunaCerta + i] == palavra.charAt(i)) {
                     checkPalavras.add(palavra);
                     int coordenada1 = linhaCerta + 1;
                     int coordenada2 = colunaCerta + 1;
@@ -292,7 +303,7 @@ public class wordSearchSolver {
         for (int i = 2; i < palavra.length(); i++) {
             if (!(linhaCerta - 2 < 0 || colunaCerta - 2 < 0))
                 if (!checkPalavras.contains(palavra)
-                        && sopaLetras[linhaCerta - 2][colunaCerta - 2] == palavra.charAt(i)) {
+                        && sopaLetras[linhaCerta - i][colunaCerta - i] == palavra.charAt(i)) {
                     checkPalavras.add(palavra);
                     int coordenada1 = linhaCerta + 1;
                     int coordenada2 = colunaCerta + 1;
@@ -312,9 +323,9 @@ public class wordSearchSolver {
             ArrayList<String> checkPalavras, List<String[]> info) {
 
         for (int i = 2; i < palavra.length(); i++) {
-            if (!(linhaCerta + 2 > sopaLetras.length || colunaCerta + 2 > sopaLetras.length))
+            if (!(linhaCerta + i > sopaLetras.length || colunaCerta + i > sopaLetras.length))
                 if (!checkPalavras.contains(palavra)
-                        && sopaLetras[linhaCerta + 2][colunaCerta + 2] == palavra.charAt(i)) {
+                        && sopaLetras[linhaCerta + i][colunaCerta + i] == palavra.charAt(i)) {
                     checkPalavras.add(palavra);
                     int coordenada1 = linhaCerta + 1;
                     int coordenada2 = colunaCerta + 1;
@@ -334,9 +345,9 @@ public class wordSearchSolver {
             ArrayList<String> checkPalavras, List<String[]> info) {
 
         for (int i = 2; i < palavra.length(); i++) {
-            if (!(linhaCerta + 2 > sopaLetras.length || colunaCerta - 2 < 0)) {
+            if (!(linhaCerta + i > sopaLetras.length || colunaCerta - i < 0)) {
                 if (!checkPalavras.contains(palavra)
-                        && sopaLetras[linhaCerta + 2][colunaCerta - 2] == palavra.charAt(i)) {
+                        && sopaLetras[linhaCerta + i][colunaCerta - i] == palavra.charAt(i)) {
                     checkPalavras.add(palavra);
                     int coordenada1 = linhaCerta + 1;
                     int coordenada2 = colunaCerta + 1;
@@ -372,77 +383,70 @@ public class wordSearchSolver {
                 int x = Integer.parseInt(string[3]) - 1; // coluna
                 for (int i = 0; i < Integer.parseInt(string[1]); i++) {
                     if (!(y < 0)) {
-                        char letra = (char)string[0].charAt(i);
+                        char letra = (char) string[0].charAt(i);
                         pontosSopa[y--][x] = Character.toUpperCase(letra);
                     }
                 }
-            }
-            else if(string[4] == "Down"){
+            } else if (string[4] == "Down") {
                 int y = Integer.parseInt(string[2]) - 1; // linha
                 int x = Integer.parseInt(string[3]) - 1; // coluna
                 for (int i = 0; i < Integer.parseInt(string[1]); i++) {
                     if (!(y > pontosSopa.length)) {
-                        char letra = (char)string[0].charAt(i);
+                        char letra = (char) string[0].charAt(i);
                         pontosSopa[y++][x] = Character.toUpperCase(letra);
                     }
                 }
-            }
-            else if(string[4] == "Right"){
+            } else if (string[4] == "Right") {
                 int y = Integer.parseInt(string[2]) - 1; // linha
                 int x = Integer.parseInt(string[3]) - 1; // coluna
                 for (int i = 0; i < Integer.parseInt(string[1]); i++) {
-                    if (!(x > pontosSopa.length)){
-                        char letra = (char)string[0].charAt(i);
+                    if (!(x > pontosSopa.length)) {
+                        char letra = (char) string[0].charAt(i);
                         pontosSopa[y][x++] = Character.toUpperCase(letra);
                     }
                 }
-            }
-            else if(string[4] == "Left"){
+            } else if (string[4] == "Left") {
                 int y = Integer.parseInt(string[2]) - 1; // linha
                 int x = Integer.parseInt(string[3]) - 1; // coluna
                 for (int i = 0; i < Integer.parseInt(string[1]); i++) {
                     if (!(x < 0)) {
-                        char letra = (char)string[0].charAt(i);
+                        char letra = (char) string[0].charAt(i);
                         pontosSopa[y][x--] = Character.toUpperCase(letra);
                     }
                 }
-            }
-            else if(string[4] == "UpLeft"){
+            } else if (string[4] == "UpLeft") {
                 int y = Integer.parseInt(string[2]) - 1; // linha
                 int x = Integer.parseInt(string[3]) - 1; // coluna
                 for (int i = 0; i < Integer.parseInt(string[1]); i++) {
                     if (!(y < 0 || x < 0)) {
-                        char letra = (char)string[0].charAt(i);
+                        char letra = (char) string[0].charAt(i);
                         pontosSopa[y--][x--] = Character.toUpperCase(letra);
                     }
                 }
-            }
-            else if(string[4] == "UpRight"){
+            } else if (string[4] == "UpRight") {
                 int y = Integer.parseInt(string[2]) - 1; // linha
                 int x = Integer.parseInt(string[3]) - 1; // coluna
                 for (int i = 0; i < Integer.parseInt(string[1]); i++) {
                     if (!(y < 0 || x > sopaLetras.length)) {
-                        char letra = (char)string[0].charAt(i);
+                        char letra = (char) string[0].charAt(i);
                         pontosSopa[y--][x++] = Character.toUpperCase(letra);
                     }
                 }
-            }
-            else if(string[4] == "DownLeft"){
+            } else if (string[4] == "DownLeft") {
                 int y = Integer.parseInt(string[2]) - 1; // linha
                 int x = Integer.parseInt(string[3]) - 1; // coluna
                 for (int i = 0; i < Integer.parseInt(string[1]); i++) {
                     if (!(y > pontosSopa.length || x < 0)) {
-                        char letra = (char)string[0].charAt(i);
+                        char letra = (char) string[0].charAt(i);
                         pontosSopa[y++][x--] = Character.toUpperCase(letra);
                     }
                 }
-            }
-            else if(string[4] == "DownRight"){
+            } else if (string[4] == "DownRight") {
                 int y = Integer.parseInt(string[2]) - 1; // linha
                 int x = Integer.parseInt(string[3]) - 1; // coluna
                 for (int i = 0; i < Integer.parseInt(string[1]); i++) {
                     if (!(y > sopaLetras.length || x > sopaLetras.length)) {
-                        char letra = (char)string[0].charAt(i);
+                        char letra = (char) string[0].charAt(i);
                         pontosSopa[y++][x++] = Character.toUpperCase(letra);
                     }
                 }
@@ -450,7 +454,7 @@ public class wordSearchSolver {
 
         }
 
-    return pontosSopa;
-}
+        return pontosSopa;
+    }
 
 }
