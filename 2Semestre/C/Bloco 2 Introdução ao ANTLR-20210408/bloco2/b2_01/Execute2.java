@@ -1,12 +1,23 @@
+import java.util.Iterator;
+import org.antlr.v4.runtime.tree.*;
+
 public class Execute2 extends HelloBaseVisitor<String> {
 
    @Override public String visitGreetings(HelloParser.GreetingsContext ctx) {
-      System.out.println("Ola " + ctx.ID());
+      String word = "";
+      for (TerminalNode tmp : ctx.ID()) {
+         word += tmp + " ";
+      }
+      System.out.println("Ola " + word);
       return null;
    }
 
    @Override public String visitBye(HelloParser.ByeContext ctx) {
-      System.out.println("Adeus " + ctx.ID());
+      String word = "";
+      for (TerminalNode tmp : ctx.ID()) {
+         word += tmp + " ";
+      }
+      System.out.println("Adeus " + word);
       return null;
    }
 }
