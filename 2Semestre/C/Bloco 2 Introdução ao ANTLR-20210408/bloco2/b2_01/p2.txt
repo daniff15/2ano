@@ -1,2 +1,2 @@
-hello Joe
-bye john
+Hello Joe
+Bye john
