@@ -1,4 +1,9 @@
+import java.util.Map;
+import java.util.HashMap;
+
 public class Execute extends CalculatorBaseVisitor<Object> {
+
+   protected Map<String,Double> symbolTable = new HashMap<String,Double>();
 
    @Override
    public Object visitStat(CalculatorParser.StatContext ctx) {
@@ -53,7 +58,8 @@ public class Execute extends CalculatorBaseVisitor<Object> {
          case "/":
             if (num2 != 0) {
                res = num1 / num2;
-            } else {
+            }
+            else{
                System.err.println("ERRO: Divide by zero");
             }
             break;
@@ -65,7 +71,7 @@ public class Execute extends CalculatorBaseVisitor<Object> {
       return res;
    }
 
-   @Override
+   @Override 
    public Object visitExprUnitario(CalculatorParser.ExprUnitarioContext ctx) {
       Double res = null;
       Double num = (Double) visit(ctx.expr());
@@ -82,4 +88,23 @@ public class Execute extends CalculatorBaseVisitor<Object> {
       }
       return res;
    }
+
+   @Override public Object visitAssignment(CalculatorParser.AssignmentContext ctx) {
+      symbolTable.put(ctx.ID().getText(), (Double)visit(ctx.expr()));
+
+      return null;
+   }
+
+   @Override public Object visitExprID(CalculatorParser.ExprIDContext ctx) {
+      if(!symbolTable.containsKey(ctx.ID().getText())){
+         System.err.println("ERROR: Assignment not found.");
+         System.exit(1);
+      }
+      return symbolTable.get(ctx.ID().getText());
+   }
+
 }
+
+
+   
+

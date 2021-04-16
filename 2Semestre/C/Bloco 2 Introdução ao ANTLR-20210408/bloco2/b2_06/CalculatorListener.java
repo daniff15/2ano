@@ -27,6 +27,16 @@ public interface CalculatorListener extends ParseTreeListener {
 	 */
 	void exitStat(CalculatorParser.StatContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link CalculatorParser#assignment}.
+	 * @param ctx the parse tree
+	 */
+	void enterAssignment(CalculatorParser.AssignmentContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CalculatorParser#assignment}.
+	 * @param ctx the parse tree
+	 */
+	void exitAssignment(CalculatorParser.AssignmentContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code ExprAddSub}
 	 * labeled alternative in {@link CalculatorParser#expr}.
 	 * @param ctx the parse tree
@@ -74,6 +84,18 @@ public interface CalculatorListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExprUnitario(CalculatorParser.ExprUnitarioContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code ExprID}
+	 * labeled alternative in {@link CalculatorParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprID(CalculatorParser.ExprIDContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ExprID}
+	 * labeled alternative in {@link CalculatorParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprID(CalculatorParser.ExprIDContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code ExprMultDivMod}
 	 * labeled alternative in {@link CalculatorParser#expr}.
