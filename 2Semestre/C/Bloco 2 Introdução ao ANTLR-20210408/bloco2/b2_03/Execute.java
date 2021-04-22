@@ -2,8 +2,8 @@ public class Execute extends CalculatorBaseVisitor<Object> {
 
    @Override
    public Object visitStat(CalculatorParser.StatContext ctx) {
-      Double result = null;
-      result = (Double) visit(ctx.expr());
+      Integer result = null;
+      result = (Integer) visit(ctx.expr());
       if (result != null) {
          System.out.println("Resultado - " + result);
       }
@@ -12,9 +12,9 @@ public class Execute extends CalculatorBaseVisitor<Object> {
 
    @Override
    public Object visitExprAddSub(CalculatorParser.ExprAddSubContext ctx) {
-      Double res = null;
-      Double num1 = (Double) visit(ctx.expr(0));
-      Double num2 = (Double) visit(ctx.expr(1));
+      Integer res = null;
+      Integer num1 = (Integer) visit(ctx.expr(0));
+      Integer num2 = (Integer) visit(ctx.expr(1));
 
       if (num1 != null && num2 != null) {
          switch (ctx.op.getText()) {
@@ -36,14 +36,14 @@ public class Execute extends CalculatorBaseVisitor<Object> {
 
    @Override
    public Object visitExprInteger(CalculatorParser.ExprIntegerContext ctx) {
-      return Double.parseDouble(ctx.Integer().getText());
+      return Integer.parseInt(ctx.Integer().getText());
    }
 
    @Override
    public Object visitExprMultDivMod(CalculatorParser.ExprMultDivModContext ctx) {
-      Double res = null;
-      Double num1 = (Double) visit(ctx.expr(0));
-      Double num2 = (Double) visit(ctx.expr(1));
+      Integer res = null;
+      Integer num1 = (Integer) visit(ctx.expr(0));
+      Integer num2 = (Integer) visit(ctx.expr(1));
 
       if (num1 != null && num2 != null) {
          switch (ctx.op.getText()) {
@@ -67,8 +67,8 @@ public class Execute extends CalculatorBaseVisitor<Object> {
 
    @Override
    public Object visitExprUnitario(CalculatorParser.ExprUnitarioContext ctx) {
-      Double res = null;
-      Double num = (Double) visit(ctx.expr());
+      Integer res = null;
+      Integer num = (Integer) visit(ctx.expr());
 
       if (num != null) {
          switch (ctx.op.getText()) {

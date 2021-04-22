@@ -98,6 +98,9 @@ public class CalculatorParser extends Parser {
 		public StatContext stat(int i) {
 			return getRuleContext(StatContext.class,i);
 		}
+		public AssignmentContext assignment() {
+			return getRuleContext(AssignmentContext.class,0);
+		}
 		public ProgramContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -109,24 +112,37 @@ public class CalculatorParser extends Parser {
 		enterRule(_localctx, 0, RULE_program);
 		int _la;
 		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(11);
+			setState(16);
 			_errHandler.sync(this);
-			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << T__2) | (1L << T__6) | (1L << ID) | (1L << Integer) | (1L << NEWLINE))) != 0)) {
+			switch ( getInterpreter().adaptivePredict(_input,1,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
 				{
-				{
-				setState(8);
-				stat();
-				}
-				}
-				setState(13);
+				setState(11);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-			}
-			setState(14);
-			match(EOF);
+				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << T__2) | (1L << T__6) | (1L << ID) | (1L << Integer) | (1L << NEWLINE))) != 0)) {
+					{
+					{
+					setState(8);
+					stat();
+					}
+					}
+					setState(13);
+					_errHandler.sync(this);
+					_la = _input.LA(1);
+				}
+				setState(14);
+				match(EOF);
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(15);
+				assignment();
+				}
+				break;
 			}
 		}
 		catch (RecognitionException re) {
@@ -145,9 +161,6 @@ public class CalculatorParser extends Parser {
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
 		}
-		public AssignmentContext assignment() {
-			return getRuleContext(AssignmentContext.class,0);
-		}
 		public StatContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -159,33 +172,20 @@ public class CalculatorParser extends Parser {
 		enterRule(_localctx, 2, RULE_stat);
 		int _la;
 		try {
-			setState(21);
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(19);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
-			case 1:
-				enterOuterAlt(_localctx, 1);
+			_la = _input.LA(1);
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << T__2) | (1L << T__6) | (1L << ID) | (1L << Integer))) != 0)) {
 				{
-				setState(17);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__1) | (1L << T__2) | (1L << T__6) | (1L << ID) | (1L << Integer))) != 0)) {
-					{
-					setState(16);
-					expr(0);
-					}
+				setState(18);
+				expr(0);
 				}
+			}
 
-				setState(19);
-				match(NEWLINE);
-				}
-				break;
-			case 2:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(20);
-				assignment();
-				}
-				break;
+			setState(21);
+			match(NEWLINE);
 			}
 		}
 		catch (RecognitionException re) {
@@ -456,20 +456,20 @@ public class CalculatorParser extends Parser {
 
 	public static final String _serializedATN =
 		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\17\64\4\2\t\2\4\3"+
-		"\t\3\4\4\t\4\4\5\t\5\3\2\7\2\f\n\2\f\2\16\2\17\13\2\3\2\3\2\3\3\5\3\24"+
-		"\n\3\3\3\3\3\5\3\30\n\3\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3"+
+		"\t\3\4\4\t\4\4\5\t\5\3\2\7\2\f\n\2\f\2\16\2\17\13\2\3\2\3\2\5\2\23\n\2"+
+		"\3\3\5\3\26\n\3\3\3\3\3\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3"+
 		"\5\3\5\5\5\'\n\5\3\5\3\5\3\5\3\5\3\5\3\5\7\5/\n\5\f\5\16\5\62\13\5\3\5"+
-		"\2\3\b\6\2\4\6\b\2\4\3\2\4\5\3\2\6\b\2\67\2\r\3\2\2\2\4\27\3\2\2\2\6\31"+
-		"\3\2\2\2\b&\3\2\2\2\n\f\5\4\3\2\13\n\3\2\2\2\f\17\3\2\2\2\r\13\3\2\2\2"+
-		"\r\16\3\2\2\2\16\20\3\2\2\2\17\r\3\2\2\2\20\21\7\2\2\3\21\3\3\2\2\2\22"+
-		"\24\5\b\5\2\23\22\3\2\2\2\23\24\3\2\2\2\24\25\3\2\2\2\25\30\7\r\2\2\26"+
-		"\30\5\6\4\2\27\23\3\2\2\2\27\26\3\2\2\2\30\5\3\2\2\2\31\32\7\13\2\2\32"+
-		"\33\7\3\2\2\33\34\5\b\5\2\34\7\3\2\2\2\35\36\b\5\1\2\36\37\t\2\2\2\37"+
-		"\'\5\b\5\b \'\7\f\2\2!\"\7\t\2\2\"#\5\b\5\2#$\7\n\2\2$\'\3\2\2\2%\'\7"+
-		"\13\2\2&\35\3\2\2\2& \3\2\2\2&!\3\2\2\2&%\3\2\2\2\'\60\3\2\2\2()\f\7\2"+
-		"\2)*\t\3\2\2*/\5\b\5\b+,\f\6\2\2,-\t\2\2\2-/\5\b\5\7.(\3\2\2\2.+\3\2\2"+
-		"\2/\62\3\2\2\2\60.\3\2\2\2\60\61\3\2\2\2\61\t\3\2\2\2\62\60\3\2\2\2\b"+
-		"\r\23\27&.\60";
+		"\2\3\b\6\2\4\6\b\2\4\3\2\4\5\3\2\6\b\2\67\2\22\3\2\2\2\4\25\3\2\2\2\6"+
+		"\31\3\2\2\2\b&\3\2\2\2\n\f\5\4\3\2\13\n\3\2\2\2\f\17\3\2\2\2\r\13\3\2"+
+		"\2\2\r\16\3\2\2\2\16\20\3\2\2\2\17\r\3\2\2\2\20\23\7\2\2\3\21\23\5\6\4"+
+		"\2\22\r\3\2\2\2\22\21\3\2\2\2\23\3\3\2\2\2\24\26\5\b\5\2\25\24\3\2\2\2"+
+		"\25\26\3\2\2\2\26\27\3\2\2\2\27\30\7\r\2\2\30\5\3\2\2\2\31\32\7\13\2\2"+
+		"\32\33\7\3\2\2\33\34\5\b\5\2\34\7\3\2\2\2\35\36\b\5\1\2\36\37\t\2\2\2"+
+		"\37\'\5\b\5\b \'\7\f\2\2!\"\7\t\2\2\"#\5\b\5\2#$\7\n\2\2$\'\3\2\2\2%\'"+
+		"\7\13\2\2&\35\3\2\2\2& \3\2\2\2&!\3\2\2\2&%\3\2\2\2\'\60\3\2\2\2()\f\7"+
+		"\2\2)*\t\3\2\2*/\5\b\5\b+,\f\6\2\2,-\t\2\2\2-/\5\b\5\7.(\3\2\2\2.+\3\2"+
+		"\2\2/\62\3\2\2\2\60.\3\2\2\2\60\61\3\2\2\2\61\t\3\2\2\2\62\60\3\2\2\2"+
+		"\b\r\22\25&.\60";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

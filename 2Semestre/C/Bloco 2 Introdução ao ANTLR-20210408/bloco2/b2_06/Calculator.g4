@@ -1,8 +1,8 @@
 grammar Calculator;
 
-program: stat* EOF;
-stat : expr? NEWLINE 
-    | assignment ;
+program: stat* EOF
+        |assignment;
+stat : expr? NEWLINE  ;
 assignment : ID '=' expr; 
 expr: op=('+'|'-') expr #ExprUnitario 
     | expr op=('*'|'/'|'%') expr #ExprMultDivMod
