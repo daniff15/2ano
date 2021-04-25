@@ -49,6 +49,18 @@ public interface CalcFracionalListener extends ParseTreeListener {
 	 */
 	void exitExprAddSub(CalcFracionalParser.ExprAddSubContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code ExprPotencia}
+	 * labeled alternative in {@link CalcFracionalParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprPotencia(CalcFracionalParser.ExprPotenciaContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ExprPotencia}
+	 * labeled alternative in {@link CalcFracionalParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprPotencia(CalcFracionalParser.ExprPotenciaContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code ExprParent}
 	 * labeled alternative in {@link CalcFracionalParser#expr}.
 	 * @param ctx the parse tree
@@ -96,6 +108,18 @@ public interface CalcFracionalListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExprID(CalcFracionalParser.ExprIDContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code ExprReduce}
+	 * labeled alternative in {@link CalcFracionalParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprReduce(CalcFracionalParser.ExprReduceContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ExprReduce}
+	 * labeled alternative in {@link CalcFracionalParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprReduce(CalcFracionalParser.ExprReduceContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code ExprFraction}
 	 * labeled alternative in {@link CalcFracionalParser#expr}.

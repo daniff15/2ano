@@ -2,19 +2,18 @@ import java.util.*;
 
 public class Execute extends CalcFracionalBaseVisitor<Fraction> {
 
-   protected Map<String,Fraction> symbolTable = new HashMap<String,Fraction>();
+   protected Map<String, Fraction> symbolTable = new HashMap<String, Fraction>();
 
    @Override
    public Fraction visitPrint(CalcFracionalParser.PrintContext ctx) {
       Fraction res = visit(ctx.expr());
-      if (res != null){
-         if(res.denominator == 1){
+      if (res != null) {
+         if (res.denominator == 1) {
             System.out.println(res.numerator);
-         }
-         else{
+         } else {
             System.out.println(res);
          }
-         
+
       }
       return res;
    }
@@ -58,13 +57,18 @@ public class Execute extends CalcFracionalBaseVisitor<Fraction> {
    }
 
    @Override
-   public Fraction visitExprUnitario(CalcFracionalParser.ExprUnitarioContext ctx) {
-      return visitChildren(ctx);
+   public Fraction visitExprUnitario(CalcFracionalParser.ExprUnitarioContext ctx) {  
+      Integer num1 = Integer.parseInt(ctx.Integer(0).getText());
+      Integer num2 = Integer.parseInt(ctx.Integer(1).getText());
+      if (ctx.op.getText().equals("-")) {
+         num1 = 0 - num1;
+      }
+      return new Fraction(num1, num2);
    }
 
    @Override
    public Fraction visitExprID(CalcFracionalParser.ExprIDContext ctx) {
-      if(!symbolTable.containsKey(ctx.ID().getText())){
+      if (!symbolTable.containsKey(ctx.ID().getText())) {
          System.err.println("Nao ha essa chave meu menino");
          System.exit(1);
       }
@@ -104,4 +108,20 @@ public class Execute extends CalcFracionalBaseVisitor<Fraction> {
       }
       return res;
    }
+
+   @Override
+   public Fraction visitExprReduce(CalcFracionalParser.ExprReduceContext ctx){
+      Fraction fracao = visit(ctx.expr());
+      fracao.reduce();
+      return fracao;
+   }
+
+   @Override
+   public Fraction visitExprPotencia(CalcFracionalParser.ExprPotenciaContext ctx){
+      Fraction frac = visit(ctx.expr());
+      Integer elevado = Integer.parseInt(ctx.Integer().getText());
+
+      return frac.powtencia(elevado);
+   }
+
 }

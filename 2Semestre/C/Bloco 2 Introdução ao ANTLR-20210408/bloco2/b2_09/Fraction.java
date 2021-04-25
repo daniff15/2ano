@@ -1,3 +1,5 @@
+import java.lang.Math;
+
 public class Fraction {
 
     int numerator;
@@ -60,6 +62,20 @@ public class Fraction {
         int newDenominator = denominator * fractionTwo.numerator;
         Fraction result = new Fraction(newNumerator, newDenominator);
         return result;
+    }
+
+    public Fraction powtencia(Integer frac){
+        int newNumerator=numerator;
+        int newDenominator=denominator;
+        
+        for (int i = 0; i < frac-1; i++) {
+            newNumerator = newNumerator * numerator;
+            newDenominator = newDenominator * denominator;
+        }
+        
+        Fraction result = new Fraction(newNumerator, newDenominator);
+        return result;
+
     }
 
     

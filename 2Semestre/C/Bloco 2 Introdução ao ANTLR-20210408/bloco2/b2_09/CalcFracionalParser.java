@@ -17,7 +17,7 @@ public class CalcFracionalParser extends Parser {
 		new PredictionContextCache();
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
-		T__9=10, ID=11, Integer=12, NEWLINE=13, WS=14, COMMENT=15;
+		T__9=10, T__10=11, T__11=12, ID=13, Integer=14, NEWLINE=15, WS=16, COMMENT=17;
 	public static final int
 		RULE_program = 0, RULE_print = 1, RULE_assignment = 2, RULE_expr = 3;
 	private static String[] makeRuleNames() {
@@ -29,15 +29,15 @@ public class CalcFracionalParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'print'", "'->'", "'+'", "'-'", "'*'", "':'", "'%'", "'/'", "'('", 
-			"')'"
+			null, "'print'", "'->'", "'^'", "'+'", "'-'", "'/'", "'*'", "':'", "'%'", 
+			"'('", "')'", "'reduce'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, null, null, null, null, null, null, null, null, "ID", 
-			"Integer", "NEWLINE", "WS", "COMMENT"
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, "ID", "Integer", "NEWLINE", "WS", "COMMENT"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -152,9 +152,10 @@ public class CalcFracionalParser extends Parser {
 				match(EOF);
 				}
 				break;
-			case T__2:
 			case T__3:
-			case T__8:
+			case T__4:
+			case T__9:
+			case T__11:
 			case ID:
 			case Integer:
 				enterOuterAlt(_localctx, 2);
@@ -331,6 +332,26 @@ public class CalcFracionalParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
+	public static class ExprPotenciaContext extends ExprContext {
+		public ExprContext expr() {
+			return getRuleContext(ExprContext.class,0);
+		}
+		public TerminalNode Integer() { return getToken(CalcFracionalParser.Integer, 0); }
+		public ExprPotenciaContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CalcFracionalListener ) ((CalcFracionalListener)listener).enterExprPotencia(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CalcFracionalListener ) ((CalcFracionalListener)listener).exitExprPotencia(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CalcFracionalVisitor ) return ((CalcFracionalVisitor<? extends T>)visitor).visitExprPotencia(this);
+			else return visitor.visitChildren(this);
+		}
+	}
 	public static class ExprParentContext extends ExprContext {
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
@@ -369,8 +390,9 @@ public class CalcFracionalParser extends Parser {
 	}
 	public static class ExprUnitarioContext extends ExprContext {
 		public Token op;
-		public ExprContext expr() {
-			return getRuleContext(ExprContext.class,0);
+		public List<TerminalNode> Integer() { return getTokens(CalcFracionalParser.Integer); }
+		public TerminalNode Integer(int i) {
+			return getToken(CalcFracionalParser.Integer, i);
 		}
 		public ExprUnitarioContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
@@ -401,6 +423,25 @@ public class CalcFracionalParser extends Parser {
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof CalcFracionalVisitor ) return ((CalcFracionalVisitor<? extends T>)visitor).visitExprID(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class ExprReduceContext extends ExprContext {
+		public ExprContext expr() {
+			return getRuleContext(ExprContext.class,0);
+		}
+		public ExprReduceContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CalcFracionalListener ) ((CalcFracionalListener)listener).enterExprReduce(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CalcFracionalListener ) ((CalcFracionalListener)listener).exitExprReduce(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CalcFracionalVisitor ) return ((CalcFracionalVisitor<? extends T>)visitor).visitExprReduce(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -464,7 +505,7 @@ public class CalcFracionalParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(44);
+			setState(48);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
 			case 1:
@@ -476,7 +517,7 @@ public class CalcFracionalParser extends Parser {
 				setState(33);
 				((ExprUnitarioContext)_localctx).op = _input.LT(1);
 				_la = _input.LA(1);
-				if ( !(_la==T__2 || _la==T__3) ) {
+				if ( !(_la==T__3 || _la==T__4) ) {
 					((ExprUnitarioContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 				}
 				else {
@@ -485,7 +526,11 @@ public class CalcFracionalParser extends Parser {
 					consume();
 				}
 				setState(34);
-				expr(7);
+				match(Integer);
+				setState(35);
+				match(T__5);
+				setState(36);
+				match(Integer);
 				}
 				break;
 			case 2:
@@ -493,7 +538,7 @@ public class CalcFracionalParser extends Parser {
 				_localctx = new ExprIntegerContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(35);
+				setState(37);
 				match(Integer);
 				}
 				break;
@@ -502,11 +547,11 @@ public class CalcFracionalParser extends Parser {
 				_localctx = new ExprFractionContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(36);
-				match(Integer);
-				setState(37);
-				match(T__7);
 				setState(38);
+				match(Integer);
+				setState(39);
+				match(T__5);
+				setState(40);
 				match(Integer);
 				}
 				break;
@@ -515,12 +560,12 @@ public class CalcFracionalParser extends Parser {
 				_localctx = new ExprParentContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(39);
-				match(T__8);
-				setState(40);
-				expr(0);
 				setState(41);
 				match(T__9);
+				setState(42);
+				expr(0);
+				setState(43);
+				match(T__10);
 				}
 				break;
 			case 5:
@@ -528,13 +573,24 @@ public class CalcFracionalParser extends Parser {
 				_localctx = new ExprIDContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(43);
+				setState(45);
 				match(ID);
+				}
+				break;
+			case 6:
+				{
+				_localctx = new ExprReduceContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(46);
+				match(T__11);
+				setState(47);
+				expr(1);
 				}
 				break;
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(54);
+			setState(61);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,6,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
@@ -542,19 +598,19 @@ public class CalcFracionalParser extends Parser {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(52);
+					setState(59);
 					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
 					case 1:
 						{
 						_localctx = new ExprMultDivModContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(46);
-						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
-						setState(47);
+						setState(50);
+						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
+						setState(51);
 						((ExprMultDivModContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
-						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__4) | (1L << T__5) | (1L << T__6))) != 0)) ) {
+						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__6) | (1L << T__7) | (1L << T__8))) != 0)) ) {
 							((ExprMultDivModContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						else {
@@ -562,20 +618,20 @@ public class CalcFracionalParser extends Parser {
 							_errHandler.reportMatch(this);
 							consume();
 						}
-						setState(48);
-						expr(7);
+						setState(52);
+						expr(8);
 						}
 						break;
 					case 2:
 						{
 						_localctx = new ExprAddSubContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(49);
-						if (!(precpred(_ctx, 5))) throw new FailedPredicateException(this, "precpred(_ctx, 5)");
-						setState(50);
+						setState(53);
+						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
+						setState(54);
 						((ExprAddSubContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
-						if ( !(_la==T__2 || _la==T__3) ) {
+						if ( !(_la==T__3 || _la==T__4) ) {
 							((ExprAddSubContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						else {
@@ -583,14 +639,26 @@ public class CalcFracionalParser extends Parser {
 							_errHandler.reportMatch(this);
 							consume();
 						}
-						setState(51);
-						expr(6);
+						setState(55);
+						expr(7);
+						}
+						break;
+					case 3:
+						{
+						_localctx = new ExprPotenciaContext(new ExprContext(_parentctx, _parentState));
+						pushNewRecursionContext(_localctx, _startState, RULE_expr);
+						setState(56);
+						if (!(precpred(_ctx, 9))) throw new FailedPredicateException(this, "precpred(_ctx, 9)");
+						setState(57);
+						match(T__2);
+						setState(58);
+						match(Integer);
 						}
 						break;
 					}
 					} 
 				}
-				setState(56);
+				setState(63);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,6,_ctx);
 			}
@@ -617,31 +685,35 @@ public class CalcFracionalParser extends Parser {
 	private boolean expr_sempred(ExprContext _localctx, int predIndex) {
 		switch (predIndex) {
 		case 0:
-			return precpred(_ctx, 6);
+			return precpred(_ctx, 7);
 		case 1:
-			return precpred(_ctx, 5);
+			return precpred(_ctx, 6);
+		case 2:
+			return precpred(_ctx, 9);
 		}
 		return true;
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\21<\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\23C\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\3\2\7\2\f\n\2\f\2\16\2\17\13\2\3\2\3\2\5\2\23\n\2\3"+
 		"\3\6\3\26\n\3\r\3\16\3\27\3\3\5\3\33\n\3\3\3\3\3\3\4\3\4\3\4\3\4\3\5\3"+
-		"\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5/\n\5\3\5\3\5\3\5\3\5\3"+
-		"\5\3\5\7\5\67\n\5\f\5\16\5:\13\5\3\5\2\3\b\6\2\4\6\b\2\4\3\2\5\6\3\2\7"+
-		"\t\2A\2\22\3\2\2\2\4\32\3\2\2\2\6\36\3\2\2\2\b.\3\2\2\2\n\f\5\4\3\2\13"+
-		"\n\3\2\2\2\f\17\3\2\2\2\r\13\3\2\2\2\r\16\3\2\2\2\16\20\3\2\2\2\17\r\3"+
-		"\2\2\2\20\23\7\2\2\3\21\23\5\6\4\2\22\r\3\2\2\2\22\21\3\2\2\2\23\3\3\2"+
-		"\2\2\24\26\7\3\2\2\25\24\3\2\2\2\26\27\3\2\2\2\27\25\3\2\2\2\27\30\3\2"+
-		"\2\2\30\31\3\2\2\2\31\33\5\b\5\2\32\25\3\2\2\2\32\33\3\2\2\2\33\34\3\2"+
-		"\2\2\34\35\7\17\2\2\35\5\3\2\2\2\36\37\5\b\5\2\37 \7\4\2\2 !\7\r\2\2!"+
-		"\7\3\2\2\2\"#\b\5\1\2#$\t\2\2\2$/\5\b\5\t%/\7\16\2\2&\'\7\16\2\2\'(\7"+
-		"\n\2\2(/\7\16\2\2)*\7\13\2\2*+\5\b\5\2+,\7\f\2\2,/\3\2\2\2-/\7\r\2\2."+
-		"\"\3\2\2\2.%\3\2\2\2.&\3\2\2\2.)\3\2\2\2.-\3\2\2\2/8\3\2\2\2\60\61\f\b"+
-		"\2\2\61\62\t\3\2\2\62\67\5\b\5\t\63\64\f\7\2\2\64\65\t\2\2\2\65\67\5\b"+
-		"\5\b\66\60\3\2\2\2\66\63\3\2\2\2\67:\3\2\2\28\66\3\2\2\289\3\2\2\29\t"+
-		"\3\2\2\2:8\3\2\2\2\t\r\22\27\32.\668";
+		"\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5\63\n\5"+
+		"\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\7\5>\n\5\f\5\16\5A\13\5\3\5\2\3\b"+
+		"\6\2\4\6\b\2\4\3\2\6\7\3\2\t\13\2J\2\22\3\2\2\2\4\32\3\2\2\2\6\36\3\2"+
+		"\2\2\b\62\3\2\2\2\n\f\5\4\3\2\13\n\3\2\2\2\f\17\3\2\2\2\r\13\3\2\2\2\r"+
+		"\16\3\2\2\2\16\20\3\2\2\2\17\r\3\2\2\2\20\23\7\2\2\3\21\23\5\6\4\2\22"+
+		"\r\3\2\2\2\22\21\3\2\2\2\23\3\3\2\2\2\24\26\7\3\2\2\25\24\3\2\2\2\26\27"+
+		"\3\2\2\2\27\25\3\2\2\2\27\30\3\2\2\2\30\31\3\2\2\2\31\33\5\b\5\2\32\25"+
+		"\3\2\2\2\32\33\3\2\2\2\33\34\3\2\2\2\34\35\7\21\2\2\35\5\3\2\2\2\36\37"+
+		"\5\b\5\2\37 \7\4\2\2 !\7\17\2\2!\7\3\2\2\2\"#\b\5\1\2#$\t\2\2\2$%\7\20"+
+		"\2\2%&\7\b\2\2&\63\7\20\2\2\'\63\7\20\2\2()\7\20\2\2)*\7\b\2\2*\63\7\20"+
+		"\2\2+,\7\f\2\2,-\5\b\5\2-.\7\r\2\2.\63\3\2\2\2/\63\7\17\2\2\60\61\7\16"+
+		"\2\2\61\63\5\b\5\3\62\"\3\2\2\2\62\'\3\2\2\2\62(\3\2\2\2\62+\3\2\2\2\62"+
+		"/\3\2\2\2\62\60\3\2\2\2\63?\3\2\2\2\64\65\f\t\2\2\65\66\t\3\2\2\66>\5"+
+		"\b\5\n\678\f\b\2\289\t\2\2\29>\5\b\5\t:;\f\13\2\2;<\7\5\2\2<>\7\20\2\2"+
+		"=\64\3\2\2\2=\67\3\2\2\2=:\3\2\2\2>A\3\2\2\2?=\3\2\2\2?@\3\2\2\2@\t\3"+
+		"\2\2\2A?\3\2\2\2\t\r\22\27\32\62=?";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

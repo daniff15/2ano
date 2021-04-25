@@ -35,6 +35,13 @@ public interface CalcFracionalVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitExprAddSub(CalcFracionalParser.ExprAddSubContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code ExprPotencia}
+	 * labeled alternative in {@link CalcFracionalParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprPotencia(CalcFracionalParser.ExprPotenciaContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code ExprParent}
 	 * labeled alternative in {@link CalcFracionalParser#expr}.
 	 * @param ctx the parse tree
@@ -62,6 +69,13 @@ public interface CalcFracionalVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitExprID(CalcFracionalParser.ExprIDContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code ExprReduce}
+	 * labeled alternative in {@link CalcFracionalParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprReduce(CalcFracionalParser.ExprReduceContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code ExprFraction}
 	 * labeled alternative in {@link CalcFracionalParser#expr}.
