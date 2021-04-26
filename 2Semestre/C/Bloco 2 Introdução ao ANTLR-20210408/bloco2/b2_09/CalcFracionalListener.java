@@ -49,6 +49,18 @@ public interface CalcFracionalListener extends ParseTreeListener {
 	 */
 	void exitExprAddSub(CalcFracionalParser.ExprAddSubContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code ExprRead}
+	 * labeled alternative in {@link CalcFracionalParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprRead(CalcFracionalParser.ExprReadContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ExprRead}
+	 * labeled alternative in {@link CalcFracionalParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprRead(CalcFracionalParser.ExprReadContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code ExprPotencia}
 	 * labeled alternative in {@link CalcFracionalParser#expr}.
 	 * @param ctx the parse tree

@@ -35,6 +35,13 @@ public interface CalcFracionalVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitExprAddSub(CalcFracionalParser.ExprAddSubContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code ExprRead}
+	 * labeled alternative in {@link CalcFracionalParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprRead(CalcFracionalParser.ExprReadContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code ExprPotencia}
 	 * labeled alternative in {@link CalcFracionalParser#expr}.
 	 * @param ctx the parse tree

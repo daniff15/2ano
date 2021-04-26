@@ -118,10 +118,23 @@ public class Execute extends CalcFracionalBaseVisitor<Fraction> {
 
    @Override
    public Fraction visitExprPotencia(CalcFracionalParser.ExprPotenciaContext ctx){
-      Fraction frac = visit(ctx.expr());
-      Integer elevado = Integer.parseInt(ctx.Integer().getText());
+      Fraction frac = visit(ctx.expr(0));
+      Fraction frac2 = visit(ctx.expr(1));
 
-      return frac.powtencia(elevado);
+      return frac.powtencia(frac2);
+   }
+
+
+   @Override
+   public Fraction visitExprRead(CalcFracionalParser.ExprReadContext ctx){
+      //So funciona se for passada so uma fracao
+      //print (read "f" + read "x") //worka
+      Scanner sc = new Scanner(System.in);
+      System.out.print(ctx.expr().getText() + ": ");
+      String[] tmpFrac = sc.nextLine().split("/");
+      Fraction frac = new Fraction(Integer.parseInt(tmpFrac[0]) ,Integer.parseInt(tmpFrac[1]));
+
+      return frac;
    }
 
 }

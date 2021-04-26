@@ -64,11 +64,11 @@ public class Fraction {
         return result;
     }
 
-    public Fraction powtencia(Integer frac){
+    public Fraction powtencia(Fraction frac){
         int newNumerator=numerator;
         int newDenominator=denominator;
         
-        for (int i = 0; i < frac-1; i++) {
+        for (int i = 0; i < frac.numerator-1; i++) {
             newNumerator = newNumerator * numerator;
             newDenominator = newDenominator * denominator;
         }

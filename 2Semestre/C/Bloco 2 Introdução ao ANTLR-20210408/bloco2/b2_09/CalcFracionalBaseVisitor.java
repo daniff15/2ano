@@ -44,6 +44,13 @@ public class CalcFracionalBaseVisitor<T> extends AbstractParseTreeVisitor<T> imp
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitExprRead(CalcFracionalParser.ExprReadContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitExprPotencia(CalcFracionalParser.ExprPotenciaContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}

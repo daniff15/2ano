@@ -63,6 +63,18 @@ public class CalcFracionalBaseListener implements CalcFracionalListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterExprRead(CalcFracionalParser.ExprReadContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprRead(CalcFracionalParser.ExprReadContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterExprPotencia(CalcFracionalParser.ExprPotenciaContext ctx) { }
 	/**
 	 * {@inheritDoc}
