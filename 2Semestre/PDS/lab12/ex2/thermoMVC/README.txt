@@ -1,0 +1,1 @@
+Substitute MercuryDisplay for RoundDisplay on ThermometerApp
