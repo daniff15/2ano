@@ -1,0 +1,30 @@
+3.1 -> a)
+CLIENTE (NIF (PK), nome, endereço, num_carta)
+ALUGUER (número (PK), Cliente_NIF(FK), Balcao_numero (FK), Veiculo_matricula(FK), duracao, data)
+BALCAO (numero (PK), nome, endereco)
+VEICULO (matricula (PK), Tipo_Veiculo_codigo (FK), ano, marca)
+TIPO_VEICULO (codigo (PK), designacao, arcondicionado,)
+SIMILARIDADE (Tipo_Veiculo_codigo1 (PK, FK) Tipo_Veiculo_Codigo2 (PK,FK))
+LIGEIRO (TIPO_Veiculo_ codigo1 (PK), numLugares, portas, combustivel)
+PESADO (Tipo_Veiculo_codigo2(PK), peso, pessageiros)
+
+3.1 -> b)
+Chaves candidatas:
+Cliente - NIF ; num_carta
+Aluguer - número
+Balcão - número
+Veiculo - matricula
+Tipo_Veiculo - Código
+
+Chaves primárias:
+Cliente - NIF
+Aluguer - número
+Balcão - número
+Veiculo - matricula
+Tipo_Veiculo - Código
+Ligeiro e Pesado - (herança da primária de Tipo_Veiculo)
+
+Chaves estrangeiras:
+Aluger - Cliente_NIF , Balcao_numero , Veiculo_matricula
+Veiculo - Tipo_Veiculo_codigo
+Similaridade - Tipo_veiculo_codigo

@@ -1,0 +1,45 @@
+3.2 -> a)
+Airport(Airport_code (PK), city, state, Name)
+Flight_Leg (Leg_no (FK), Flight_Number (PK, FK), Arr_Airport_code (FK), Dep_Airport_code(FK), SchDepTime, SchArrTime)
+Airplane_type(Type_name (PK) , Max_seats , Company)
+Airplane(Airplane_Id (PK) , Total_no_of_seats , Airpl8ane_Type_Type_name (FK))
+Leg_instance(date (PK), Leg_no (PK,FK), Flight_Number(PK, FK), No_of_Avail_seats,Arr_Airport_code (FK), Dep_Airport_code(FK), SchDepTime(FK), SchArrTime(FK))
+Flight (Number (PK) , airline, weekdays)
+Fare (code (PK), restrictions, amount, Flight_Number (PK, FK)) 
+Seat(Seat_no (PK), Leg_instance_date (PK, FK), Len_no(PK, FK), Flight_Number(PK, FK), CName, Cphone) 
+Can_land(Airport_Airport_code (PK, FK), Airplane_Type_Name (PK, FK))
+
+3.2 -> b)
+
+Candidatas: 
+Airport - Airport_code
+Flight_Leg - Leg_no
+Airplane_type - Type_name
+Airplane - Airplane_id
+Leg_instance - date
+Flight - number, airline
+Fare - code, amount
+Seat - seat_no
+Can_land - Airport_Airport_code, Airplane_Type_type_name
+
+Primarias:
+Airport(Airport_code)
+Airplane_type(Type_name)
+Airplane(Airplane_Id)
+Flight(Number)
+Flight_leg(Leg_no)
+Leg_instance(date)
+Fare(code)
+Seat(Seat_no)
+
+Estrangeiras -
+Flight_Leg - Airport_Airport_code ; Flight_Number
+Fare - Flight_Number
+Leg_instance - Airplane_Airplane_Id
+Can_land - Airport_Airport_code , Airplane_Type_name
+Airplane - Airplane_Type_Type_name
+Seat - Leg_instance_date
+
+
+
+
