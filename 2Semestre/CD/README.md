@@ -2,7 +2,7 @@
 
 1º Projeto - 20
 
-2º Projetp - 20
+2º Projeto - 20
 
 3º Projeto - 15
 
