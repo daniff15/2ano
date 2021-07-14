@@ -1,0 +1,10 @@
+show 100 * 1000 -5000 + 1500;
++234 -> v; show v;
+(456789 div 100) mod 10 -> v22;
+show v22;
+show v22 + 1234 div v22 - v * v mod 1000;
+show -v22;
+-(v * v22 - 1000 div 10) -> v23;
+show +v23;
+show -v23;
+show 9 mod 5 div 2 * 4 -5 +6;

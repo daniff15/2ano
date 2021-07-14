@@ -1,0 +1,4 @@
+# p1.txt
+show 10000000000000000000000; #escreve na consola um numero muito grande
+345678902144 -> c; #guarda na var c um numero muito grande
+show c;

@@ -1,0 +1,6 @@
+print "Bom dia!" //comentario
+t1: "Miguel" //outro comentario
+print t1 //scgfcf
+print "dia"/"i"/"iii" 
+print trim "  olas" 
+print "uyiasjnd" + "ASUJDNK" + "ayugsbh" 
