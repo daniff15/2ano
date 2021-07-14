@@ -1,0 +1,15 @@
+Análise da implementação da classe java.util.Calendar:
+
+Esta classe possui 2 construtores, ambos protected (não podendo ser acedidos fora da package):
+ - Calendar()
+    - constrói um objeto do tipo Calendar com a default zone time;
+ - Calendar(TimeZone zone, Locale aLocale)
+    - contrói um objeto do tipo Calendar com uma time zone e local específicos.
+
+Como os construtores são protected, então para fazer a instanciação de um objeto vamos ter presentes 4 métodos:
+    - getInstance() ; getInstance(TimeZone zone); getInstance(Locale aLocale) ; getInstance(TimeZone zone, Locale aLocale)
+
+Em cada um destes métodos, é chamada a função "createCalendar(TimeZone zone, Locale aLocale)", que vai criar e devolver objetos do tipo Calendar.
+De acordo com os parâmetros passados vamos poder ter criação de diferentes tipos de calendários, podendo eles ser do tipo Buddhist, Gregorian, Japanese, funcionando de um modo parecido com a factory, criando diferentes tipos de objetos consoante os parâmetros passados.
+
+Conclui-se que o java.util.Calendar apresenta o padrão factory method.

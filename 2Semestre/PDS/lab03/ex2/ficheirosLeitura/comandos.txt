@@ -1,0 +1,12 @@
+h
+I lab03/ex2/ficheirosLeitura/flight1.txt
+M TP1920
+I lab03/ex2/ficheirosLeitura/flight2.txt
+M TP1930
+F TP1910 3x2
+R TP1910 T 2
+R TP1910 T 3
+R TP1910 T 7
+C TP1910:1
+M TP1910
+Q

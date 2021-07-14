@@ -1,0 +1,5 @@
+H
+I lab03/flight2.txt
+M RANDOMFLIGHT
+M TP1930
+Q
