@@ -1,0 +1,101 @@
+Cenas importantes para se falar: 
+Bom dia, eu sou o daniel figueiredo, e com o meu colega pedro sobral, vamos apresentar o artigo "the self-avatar follower effect in virtual reality"
+que retrata qual é o efeito que o corpo do avatar tem sobre o participante e q o faz seguir 
+esse mesmo corpo virtual, dai a parte do "follower effect", este efeito é devido ao facto do participante estar a ver o corpo do avatar em primeira pessoa
+OU SEJA TEM MAIS TENDENCIA PARA SEGUIR OS MOVIMENTOS DESTE
+
+slide 2- 
+O Porquê de termos escolhido este tema?
+Ora bem, escolhemos este tema pelo facto de já nos termos conectado anteriormente com esta realidade, 
+através de jogos ou mesmo apenas visualizacao de videos atraves desta realidade, e ao vermos que este artigo se relacionava com 
+esta realidade decidimos então falar sobre este assunto, pois despertou-nos à atencao sabermos que influência tem o efeito do avatar
+no participante que utiliza estas realidades. 
+
+slide 3-
+- Agora apresentamos aqui um pouco do Background do porquê do efeito do avatar influenciar o utilizador, sendo este através do embodiment do avatar 
+- este fenomeno é normalmente, quando temos acesso direto ao avatar, que está numa perspetiva de primeira pessoa, ou seja, podemos ver pelos olhos do avatar.
+Segundo os autores do artigo e da investigação, o fenomeno de "embodiment" corresponde a uma substituição um para um do nosso corpo, 
+tomando assim o utilizador conta do corpo do avatar.
+- Esta investigacao, demonstrou que este fenomeno pode alterar o comportamento motor de diferentes maneiras que iremos refereir posteriormente.
+- E a pergunta que se coloca, mais frequentemente, é se existe algum mecanismo subjacente a essas compensacoes motoras?,
+ou seja se ha algum mecanismo adicional que permite que o participante reaja da maneira q reage estando perante os olhos do avatar
+E é precisamente nesta pergunta que a investigaçao tirou as suas maiores conclusoes, tentando os investigadores compreender este fenomeno do "follower efect" 
+
+slide 4-
+O primeiro exemplo de um "follower effect" é o "motion retargeting", que se refere ao facto 
+de por exemplo, ao tentar pegar num objeto, como estamos em primeira pessoa, caso o avatar faça algum movimento,  
+o nosso próprio corpo irá tentar compensar esse movimento, para tentar fazer um "match" com o formato em que se encontra o avatar.
+
+Como se pode observar na figura, estamos presentes este fenomeno devido a haver um redirecionamento
+da mão fisica devido ao que o investigador viu através do avatar, pois, este, 
+ao ver que quando estava a fazer o movimento para a frente, a mao virtual foi um pouco para cima e depois para baixo, 
+ele tentou compensar esse mesmo movimento alterando a trajetoria da sua mão, o q fez com que 
+ele fosse demasiado para baixo, comparando com o sitio q ele inicialmente teria de ir.
+
+slide 5- 
+Outro exemlpo de um follower effect é o motion contagion
+Um exemplo deste fenomeno é o facto de ao utilizador ser-lhe pedido para desenhar uma linha reta, continuadamente para cima e para baixo, 
+e o facto de ele estar em primeira pessoa e estar a observar que o avatar está a desenhar elipses vai fazer com que
+ele comece a fazer movimentos mais circulares sem se aperceber disso
+Assim podemos observar que a performance do utilizador foi altamente atraida para o que o avatar 
+estava a desenhar devido ao facto de o utilizador comecar a pensar que a mao do avatar era a sua própria mao,
+ou seja, para o utilizador ele estava a desenhar as elipses e comecou posteriormente a tentar compensar esse movimento para tentar voltar as linhas retas
+contudo cada vez mais, o desenho do utilizador ficava mais parecido
+com um circulo do que com o q lhe foi pedido inicialmente que era uma simples linha reta.
+
+slide 6 -
+Ora bem, neste diapositivo podemos observar ainda mais um fenomeno de follower effect neste caso o mimicry effect
+Este fenomeno retrata um maior significado cultural e social, ou seja, por exemplo, os movimentos e acoes dos participantes
+vao ser altamente influencidos pelas acoes de outros avatares em redor ao participant.
+Como por exemplo, atraves da imagem, o que podemos observar é q caso, o avatar atribuido ao participante fosse o avatar vestido com um fato
+iria observar-se que o participante, poderia eventualmente ficar menos musical devido ao facto de estar vestido formalmente, ou seja nao iria ficar 
+tao expressivo a tocar o instrumento, caso estivesse vestido com uma roupa mais informal, poderia 
+trazer lhe mais expressividade e posteriormente uma maior liberdade para tocar o instrumento tal como ele quisesse.
+
+slide 7 - 
+Entao agora relativamente À experiencia em si.
+Motivacao que estes investigadores tiverem para fazer esta experiencia, foi o facto 
+do comportamente de ajuste ao corpo do avatar por parte de participantes
+ja ser uma tendencia em varias experiencias com realidade virtual, ou seja
+já é comum verificar se este fenomeno, tentando estes investigadores,atraves desta experiencia ,perceberem as principais razao deste acontecimento.
+
+Até em avatar que sao estaticos, bastantes particpantes destas experiencias se tentam ajustar ao corpor do avatar, movimentando, por exemplo
+a sua anca ou o ate o corpo todo de modo a ficarem alinhados com o corpo virtual.
+
+slide 8 - A experiencia baseou-se numa pergunta alvo, que é, se desviarmos o braço do avatar, o participante vai tentar compensar essa movimentacao, 
+alterando a trajetoria do seu movimento?
+Neste estudo participaram 8 mulheres e 13 homens, que tinham idades compreendidas entre os 18 e os 65 anos, dando uma media de idades de cerca de 29 anos
+A tarefa principal desta experiencia foi pedir ao utilizador que movimentasse o seu braço e que fosse de um ponto P0
+ate um ponto P1
+
+slide 9 - ao remapear o avatar para outra direçao, o participante vai perceber que o avatar se moveu, podendo  escolher se quer continuar a fazer o mesmo movimento q estava a fazer,
+ou se pretende deslocar se da mesma maneira que o avatar se moveu, é totalmente involuntario, visto que a tarefa era so ir do ponto p0 ao ponto p1, 
+podendo continuar a realizar esta tarefa mesmo se nao se mexer na direcao do avatar
+ha portanto 3 condicoes (instantanea (mexer o braco do avatar 30 graus de repente para uma certa direcao), 
+alteracao da trajetoria gradual, aos poucos ir redirecionando o braco do avatar, e nao alteracao da trajetoria)
+E veremos se eles tentam compensar o movimento do avatar
+
+slide 10- 
+E a resposta é sim, eles tentam compensar esse movimento.
+Cada participante esta representado por cores diferentes e nos graficos podemos ver as posicoes das maos dos utilizadores comparando com a mao do avatar
+Quando nao houve alteracao da posicao do braco do avatar, podemos observar que nao houve grande alteracao da trajetoria do braco fisico, ou seja, nao tentaram compensar muito o moviemnto do avatar, e restringiram se apenas a fazer a sua tarefa
+Quando o movimento do braco do avatar foi instantaneo e gradual, podemos observa-se que a maioria das pessoas tentou compensar esse moviemnto do avatar, alterando a direcao do seu braco fisico.
+contudo atraves dos resultados, podemo nos aperceber que o participante tenta redirecionar se na maior parte dos casos, devido ao facto de ver q o avatar se esta a mover
+
+slide 11-
+Podemos observar entao que caso nao haja alteracao da direcao do avatar nenhuma, a pessoa fica totalmente alinhada com o avatar
+Caso a alteraçao seja instantanea, entao os participantes vao tentar realocar o seu braco de modo a tentar sobrepor ao braco do avatar, contudo nao vai ser possivel colocar totalmente o braco fisico sobreposto com o braco do avatar.
+Caso a alteracao seja gradual, podemos observar melhores resultados do que os obtidos na movimentacao instantanea, contudo em alguns casos tambem nao sera possivel alinhar totalmente o braco fisicio com o ficticio.
+Sendo assim, a alteracao gradual é muito mais facil de compensar do que a alteracao instantanea, visto que o utilizador se vai apercebendo gradualmente da movimentacao do braço do avatar
+
+slide 12-
+constant offset: between the real body and the virtual body that cannot be overcomer by the follower effect, participants will not be able to compensate and will reduce their embodiment. Or i the offset is not to big they will not perceive the need to recalibrate.
+drop in embodiment: caso a forca do embodiment seja menor, o participante nao sente tanta necessidade de recalibrar o seu corpo ao corpo do avatar
+semantic violations: we expect that in those occasions in which embodiment ad agency is disruptd by drastic changes and errors on the avatar motions (as in the case of movement semantic violations ), the follower effect wont apply.
+
+slide 13- 
+
+When a spatial offset is introduced between the real and the virtual body, and the follower effect introduces compensations, for example, participants tend to reduce the offset of their physical bodies to the avatar body.
+The extent to which participants follow their self-avatar depends on whether the offset of the avatar body is introduced gradually or not
+The follower effect strength is modulated by the degree of embodiment, which means, that, the higher the embodiment the stronger is the need to fit into the self-avatar.
+ 
