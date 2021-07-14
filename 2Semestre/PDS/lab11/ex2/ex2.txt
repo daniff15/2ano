@@ -1,0 +1,11 @@
+java.nio.OutputStream - O método template está no método "public abstract void write(int b)" que é chamado pelo
+ método "public void write(byte b[], int off, int len)" que tem de ser implementado pela subclass OutputStream. Para além dos métodos presentes no template é ainda definido um método abstrato
+        abstract public void close() throws IOException;
+        abstract public void flush() throws IOException;
+        abstract public void write(char cbuf[], int off, int len) throws IOException;
+ 
+ java.nio.InputStream - O método template está no método "public int write(byte b[], int off, int len)" que é chamado pelo 
+ método "public int read(int b)" que tem de ser implementado pela subclass Inputstream. Para além dos métodos presentes no template é ainda definido um método abstrato
+        public abstract int read() throws IOException;
+
+ java.util.AbstractList - presente nos métodos add e remove, sendo usado, por exemplo, pela classe class SubList<E> extends AbstractList<E>
