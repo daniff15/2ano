@@ -6,7 +6,7 @@
 
 3º Projeto - 15
 
-4º e 5º Projeto - Não nos focamos muito neles
+4º e 5º Projeto - Cagar nesses
 
 ## Autores
 * **Daniel Figueiredo**: [daniff15](https://github.com/daniff15)
